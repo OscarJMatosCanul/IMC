@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     Button mBotonCalcular;
     Button mBotonLimpiar;
     TextView mEtiquetaIMC;
+    TextView mEtiquetaOMS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         mBotonCalcular=(Button)findViewById(R.id.boton_calcular);
         mBotonLimpiar=(Button)findViewById(R.id.boton_limpiar);
         mEtiquetaIMC=(TextView)findViewById(R.id.etiqueta_imc);
+        mEtiquetaOMS=(TextView)findViewById(R.id.etiqueta_oms_res);
 
         mBotonCalcular.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -36,6 +38,22 @@ public class MainActivity extends AppCompatActivity {
                 double imc = peso/(estatura*estatura);
                 s=String.format("%2.2f",imc);
                 mEtiquetaIMC.setText(s);
+                if(imc<18.5)
+                {
+                    mEtiquetaOMS.setText(R.string.texto_etiqueta_oms_bajo);
+                }
+                if(imc>=18.5 && imc<=24.99){
+                    mEtiquetaOMS.setText(R.string.texto_etiqueta_oms_PN);
+                }
+                if (imc>=25.0 && imc<=29.99){
+                    mEtiquetaOMS.setText(R.string.texto_etiqueta_oms_SP);
+                }
+                if (imc>=30.00 && imc<=39.99){
+                    mEtiquetaOMS.setText(R.string.texto_etiqueta_oms_Ob);
+                }
+                if(imc>40.0){
+                    mEtiquetaOMS.setText(R.string.texto_etiqueta_oms_OE);
+                }
             }
         });
 
@@ -45,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 mCampoPeso.setText("");
                 mCampoEstatura.setText("");
                 mEtiquetaIMC.setText("0.0");
+                mEtiquetaOMS.setText("--");
             }
         });
     }

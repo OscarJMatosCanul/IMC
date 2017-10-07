@@ -5,4 +5,10 @@
     <string name="texto_boton_calcular">Calcular</string>
     <string name="texto_boton_limpiar">Limpiar</string>
     <string name="texto_etiqueta_resultado">El indice de Masa Corporal (IMC) es: </string>
+    <string name="texto_etiqueta_oms">Segun la OMS su peso es: </string>
+    <string name="texto_etiqueta_oms_bajo">BAJO</string>
+    <string name="texto_etiqueta_oms_PN">Normal</string>
+    <string name="texto_etiqueta_oms_SP">Sobre Peso</string>
+    <string name="texto_etiqueta_oms_Ob">Obeso</string>
+    <string name="texto_etiqueta_oms_OE">Obesidad Extrema</string>
 </resources>
